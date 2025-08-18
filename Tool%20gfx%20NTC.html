@@ -1,0 +1,268 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ngtuancuongdzai</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f8f9fa;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #d32f2f;
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000;
+      }
+
+      nav h1 {
+        font-family: 'Bangers', cursive;
+        color: #fff;
+        font-size: 36px;
+        margin: 0;
+      }
+
+      .container {
+        background: #fff;
+        width: 348px;
+        margin: 80px auto 50px;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        margin-top: 0;
+        font-size: 20px;
+        text-align: center;
+        font-family: 'Bangers', cursive;
+        background: linear-gradient(45deg, #ff4f00, #ff2a00, #b71c1c, #ffeb3b);
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .section label {
+        font-weight: bold;
+        font-size: 16px;
+        display: block;
+        margin-bottom: 5px;
+        font-family: 'Bangers', cursive;
+        background: linear-gradient(45deg, #ff4f00, #ff2a00, #b71c1c); 
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .section small {
+        display: block;
+        color: #666;
+        margin-bottom: 8px;
+      }
+
+      select {
+        width: 100%;
+        padding: 8px;
+        font-size: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+
+      .toggle-group {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .toggle {
+        background: #eee;
+        border-radius: 20px;
+        padding: 8px 18px;
+        cursor: pointer;
+        user-select: none;
+        transition: all 0.2s ease-in-out;
+        border: 2px solid transparent;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .toggle.active {
+        border: 2px solid #e64a19; 
+        box-shadow: 0 0 12px rgba(230, 74, 25, 0.8); 
+        background: linear-gradient(45deg, #e64a19, #ff5722); 
+        color: white;
+      }
+
+      .apply-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff4f00, #ff2a00, #b71c1c); 
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.3s ease;
+        font-family: 'Bangers', cursive;
+      }
+
+      .apply-btn:hover {
+        background: linear-gradient(45deg, #ff2a00, #b71c1c, #ff4f00);
+        box-shadow: 0 0 12px rgba(211, 47, 47, 0.8); 
+      }
+
+      .popup-toast {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #4CAF50;
+        color: white;
+        border-radius: 12px;
+        padding: 15px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+        display: none;
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        font-family: 'Arial', sans-serif;
+      }
+
+      .popup-toast span {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .popup-toast .popup-message {
+        font-weight: bold;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h1>Menu HeadShot OB50</h1>
+    </nav>
+
+    <div class="container">
+      <h2>Settings Device GFX Tool </h2>
+
+ 
+      <div class="section">
+        <label>Resolution Device Config</label>
+        <small>Thay đổi tỉ lệ khung hình để trải nghiệm tốt hơn.</small>
+        <select name="resolution">
+          <option value="480">480p</option>
+          <option value="960">960p</option>
+          <option value="1280">1280p</option>
+          <option value="1920">1920p</option>
+        </select>
+      </div>
+
+      
+      <div class="section">
+        <label>FPS Game + 40%</label>
+        <small>Tinh chỉnh FPS để máy chơi game mượt mà hơn.</small>
+        <select name="fps">
+            <option value="15">15 FPS</option>
+            <option value="30">30 FPS</option>
+            <option value="60">60 FPS</option>
+            <option value="90">90 FPS</option>
+        </select>
+      </div>
+
+      
+      <div class="section">
+        <label>Graphics Touch Speed Mobile</label>
+        <small>Giúp tăng cảm ứng màn hình lên tầm cao mới.</small>
+        <select name="graphics">
+          <option value="delay">Delay ❌</option>
+          <option value="smooth">Smooth</option>
+          <option value="balanced">Balanced</option>
+          <option value="hd">HD</option>
+        </select>
+      </div>
+
+      
+      <div class="toggle-group">
+        <div class="toggle" id="light-toggle">
+          Nhẹ Tâm
+        </div>
+        <div class="toggle" id="heavy-toggle">
+          Đầm Tâm
+        </div>
+        <div class="toggle" id="sensitive-toggle">
+          Nhạy Tâm
+        </div>
+      </div>
+
+      
+      <button class="apply-btn" id="apply-btn">Cài Đặt Tool Game</button>
+    </div>
+
+    
+    <div class="popup-toast" id="popup-toast">
+      <span>⚙ Cài Đặt Thành Công 100% ✅</span>
+      <div class="popup-message">
+        cân nhắc :<strong><span style="color: red; font-weight: bold;"> nếu bạn đang sử dụng Cấu hình của NgTuanCuong</span></strong> cần phải khởi động lại hoặc tắt nguồn và chờ <strong>trong khoảng thời gian bởi vì config ngấm lâu mới có tác dụng nhé ! ❤️</strong>.
+      </div>
+      <small>hãy đảm bảo bạn có trình độ để sử dụng cấu hình của NTC có hiệu quả nhất nhé ! ✨</small>
+    </div>
+
+    <script>
+      const applyBtn = document.getElementById('apply-btn');
+      const popupToast = document.getElementById('popup-toast');
+      
+      
+      const lightToggle = document.getElementById('light-toggle');
+      const heavyToggle = document.getElementById('heavy-toggle');
+      const sensitiveToggle = document.getElementById('sensitive-toggle');
+
+      lightToggle.addEventListener('click', () => toggleActive(lightToggle));
+      heavyToggle.addEventListener('click', () => toggleActive(heavyToggle));
+      sensitiveToggle.addEventListener('click', () => toggleActive(sensitiveToggle));
+
+      function toggleActive(activeButton) {
+        
+        lightToggle.classList.remove('active');
+        heavyToggle.classList.remove('active');
+        sensitiveToggle.classList.remove('active');
+
+       
+        activeButton.classList.add('active');
+      }
+
+      applyBtn.addEventListener('click', () => {
+        popupToast.style.display = 'block';
+
+        setTimeout(() => {
+          popupToast.style.display = 'none';
+        }, 4000);
+        
+        
+        const resolution = document.querySelector('select[name="resolution"]').value;
+        const fps = document.querySelector('select[name="fps"]').value;
+        const graphics = document.querySelector('select[name="graphics"]').value;
+
+        console.log(`Applying resolution: ${resolution}`);
+        console.log(`FPS set to: ${fps}`);
+        console.log(`Graphics setting: ${graphics}`);
+      });
+    </script>
+  </body>
+</html>
